@@ -1,0 +1,10 @@
+{
+  "name": "bdm-app-prod",
+  "region": "us-west1",
+  "build": {
+    "builder": "NIXPACKS_VITE"
+  },
+  "deploy": {
+    "numReplicas": 1
+  }
+}
