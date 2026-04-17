@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Windows/Desktop/files/**)",
+      "Read(//c/Users/Windows/Downloads/riberatech-main/riberatech-main/**)",
+      "Read(//tmp/**)",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('app_ui.py'\\).read\\(\\)\\); print\\('Syntax OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('app_ui.py', encoding='utf-8'\\).read\\(\\)\\); print\\('Syntax OK'\\)\")",
+      "Bash(python -c \"import ast; ast.parse\\(open\\('exportar.py', encoding='utf-8'\\).read\\(\\)\\); print\\('exportar.py Syntax OK'\\)\")",
+      "Bash(streamlit run:*)",
+      "Bash(python -c \"import anthropic; print\\(anthropic.__version__\\)\")",
+      "Bash(pip install:*)",
+      "Bash(python -m pip install anthropic)",
+      "Bash(python -c ':*)",
+      "WebSearch",
+      "Read(//c/Users/Windows/Desktop/PALMA RIBERA/**)",
+      "Bash(python3 -c ':*)",
+      "Read(//c/Users/Windows/Desktop/Apps en desarrollo/pipeline-planificacion/Sample files/**)",
+      "Bash(python -m py_compile app_ui.py)",
+      "Bash(python -m py_compile db_pria.py)",
+      "Bash(python -m py_compile parser_archivos.py)",
+      "Bash(python -m py_compile db_pria.py parser_archivos.py app_ui.py)",
+      "Read(//c/Users/Windows/Desktop/Apps en desarrollo/PRIA v3/.streamlit/**)",
+      "Read(//c/Users/Windows/Desktop/Apps en desarrollo/PRIA v3/**)",
+      "Bash(python -m py_compile exportar.py)",
+      "Bash(netstat -ano)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Windows\\Downloads\\riberatech-main\\riberatech-main\\PRIA v3",
+      "C:\\Users\\Windows\\Desktop\\files",
+      "\\tmp"
+    ]
+  }
+}
