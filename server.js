@@ -106,19 +106,7 @@ app.get("/api/version", (req, res) => {
   res.json({ commit: COMMIT, timestamp: new Date().toISOString() });
 });
 
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({ error: "Not found" });
-});
-
-// Global error handler (4 params required by Express)
-app.use((err, req, res, _next) => {
-  const timestamp = new Date().toISOString();
-  console.error(`[${timestamp}] ERROR ${req.method} ${req.path}:`, err.message, err.stack);
-  res.status(500).json({ error: "Internal server error" });
-});
-
-// Serve static files from dist if it exists (MUST be after all API routes)
+// Serve static files from dist if it exists (MUST be after all API routes, BEFORE 404 handler)
 const distPath = join(__dirname, "dist");
 if (existsSync(distPath)) {
   app.use(express.static(distPath));
@@ -132,6 +120,18 @@ if (existsSync(distPath)) {
     res.send("BDM App - Run 'npm run build' first, or use 'npm run dev' for development");
   });
 }
+
+// 404 handler (only reached if static middleware didn't match, e.g. no dist folder)
+app.use((req, res) => {
+  res.status(404).json({ error: "Not found" });
+});
+
+// Global error handler (4 params required by Express)
+app.use((err, req, res, _next) => {
+  const timestamp = new Date().toISOString();
+  console.error(`[${timestamp}] ERROR ${req.method} ${req.path}:`, err.message, err.stack);
+  res.status(500).json({ error: "Internal server error" });
+});
 
 const server = createServer(app);
 server.listen(PORT, () => {
