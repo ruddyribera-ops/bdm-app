@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/Users/Windows/Desktop/Apps en desarrollo/bdm-app/**)",
+      "Bash(vercel env:*)",
+      "Bash(vercel --prod)",
+      "Read(//c/Users/Windows/Downloads/riberatech-main/riberatech-main/PRIA v3/**)",
+      "Bash(grep -E \"\\\\.\\(py|txt|md|toml|js\\)$\")"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Windows\\Desktop\\Apps en desarrollo\\bdm-app\\src"
+    ]
+  }
+}
